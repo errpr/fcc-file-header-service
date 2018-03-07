@@ -13,8 +13,9 @@ app.get("/", function (request, response) {
 });
 
 app.post("/upload", upload.single('thefile'), function (request, response) {
+  console.log(request.file);
   response.json({
-    fileSize: request.file.size,
+    size: request.file.size,
   });
 });
 
